@@ -132,9 +132,10 @@ wms:
   proxy:
     list:
       o2-basemap-bright:
-        url: http://mapproxy.dev.o2.radiantbluecloud.com/wms
+        #url: http://mapproxy.dev.o2.radiantbluecloud.com/wms
+        url: http://o2-mapproxy:8080/wms
         name: o2-basemap-bright
       o2-basemap-basic:
-        url: http://mapproxy.dev.o2.radiantbluecloud.com/wms
+        #url: http://mapproxy.dev.o2.radiantbluecloud.com/wms
+        url: http://o2-mapproxy:8080/wms
         name: o2-basemap-basic
-
