@@ -139,3 +139,6 @@ wms:
         #url: http://mapproxy.dev.o2.radiantbluecloud.com/wms
         url: http://o2-mapproxy:8080/wms
         name: o2-basemap-basic
+
+server:
+  contextPath: /service-proxy

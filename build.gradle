@@ -15,7 +15,7 @@ group "map.proxy"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
-apply plugin:"war"
+//apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.grails-gsp"
 apply plugin:"asset-pipeline"
@@ -28,12 +28,16 @@ repositories {
 dependencyManagement {
     imports {
         mavenBom "org.grails:grails-bom:$grailsVersion"
+        mavenBom 'org.springframework.cloud:spring-cloud-starter-parent:Brixton.SR7'
     }
     applyMavenExclusions false
 }
 
 dependencies {
     compile 'org.webjars:openlayers:3.20.1'
+
+    compile "org.springframework.cloud:spring-cloud-starter-config"
+    compile "org.springframework.cloud:spring-cloud-starter-eureka"
 
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
@@ -63,6 +67,14 @@ bootRun {
 
 
 assets {
-    minifyJs = true
-    minifyCss = true
+  minifyJs = true
+  minifyCss = true
+  //http://www.technologyscout.net/2015/07/adding-assets-in-grails-3/
+  includes = ["**/fonts/**"]
+  excludes = [
+    '**/webjars/**',
+    '**/*-debug.js',
+    '**/*-deps.js',
+    '**/*-openlayers*',
+  ]
 }
