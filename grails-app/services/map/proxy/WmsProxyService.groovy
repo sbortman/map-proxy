@@ -18,7 +18,7 @@ class WmsProxyService
     def proxyiedServer = grailsApplication.config.wms.proxy.list[inputLayer]
 
 //    println proxyiedServer
-    
+
     try
     {
 
@@ -37,7 +37,7 @@ class WmsProxyService
       def query = newParams.collect { "${it.key}=${URLEncoder.encode( it.value as String, 'UTF-8' )}" }.join( '&' )
       def url = "${baseMapURL}?${query}".toURL()
 
-//      println url
+      println url
 
       buffer = url.bytes
     }
